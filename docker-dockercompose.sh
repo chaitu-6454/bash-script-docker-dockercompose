@@ -66,6 +66,9 @@ sudo apt-get install -y nginx
 sudo systemctl enable nginx
 sudo systemctl start nginx
 
+# Install Mysql client
+sudo apt-get install mysql-client -y
+
 # Install Certbot and python3-certbot-nginx for automatic Nginx SSL configuration
 sudo apt-get install -y certbot python3-certbot-nginx
 
