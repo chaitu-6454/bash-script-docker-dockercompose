@@ -59,6 +59,20 @@ docker-compose --version
 echo "Adding user '$USER' to docker group..."
 sudo usermod -aG docker $USER
 
+# Install Nginx
+sudo apt-get install -y nginx
+
+# Enable and start Nginx
+sudo systemctl enable nginx
+sudo systemctl start nginx
+
+# Install Certbot and python3-certbot-nginx for automatic Nginx SSL configuration
+sudo apt-get install -y certbot python3-certbot-nginx
+
+# Clean up unnecessary files and packages
+sudo apt-get autoremove -y
+sudo apt-get clean
+
 echo "=============================================="
 echo "Installation completed successfully!"
 echo "Please log out and log back in to use Docker without sudo."
